@@ -86,7 +86,7 @@ public class MainWSClient {
 
 	@OnOpen
 	public void onOpen(Session session) {
-		System.out.println("onOpen: " + session.toString());
+		System.out.println("onOpen: uri=" + session.getRequestURI() + ", id=\'" + session.getId() + "\'");
 		System.out.flush();
 	}
 
@@ -114,7 +114,7 @@ public class MainWSClient {
 
 	@OnClose
 	public void onClose(Session session) {
-		System.out.println("onClose: " + session.toString());
+		System.out.println("onClose: uri=" + session.getRequestURI() + ", id=\'" + session.getId() + "\'");
 		System.out.flush();
 		mainThread.interrupt();
 	}
