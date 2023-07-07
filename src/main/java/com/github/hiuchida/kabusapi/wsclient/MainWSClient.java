@@ -116,6 +116,7 @@ public class MainWSClient {
 	public void onClose(Session session) {
 		System.out.println("onClose: " + session.toString());
 		System.out.flush();
+		mainThread.interrupt();
 	}
 
 }
