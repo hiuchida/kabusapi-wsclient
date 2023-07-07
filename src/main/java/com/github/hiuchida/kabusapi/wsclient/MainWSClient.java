@@ -93,11 +93,11 @@ public class MainWSClient {
 	@OnMessage
 	public void onMessage(String message) {
 		try {
-			System.out.println("onMessge: " + message);
+			System.out.println("onMessage: " + message);
 			System.out.flush();
 			BoardBean json = BoardBeanFactory.parseJson(message);
-			System.out.println("    json:");
-			System.out.println(json.toString());
+			System.out.println("json: " + json.symbol);
+//			System.out.println("json: " + json.toString());
 			System.out.flush();
 		} catch (Throwable t) {
 			t.printStackTrace(System.out);
